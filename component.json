@@ -12,5 +12,6 @@
         "git": "https://github.com/blocklang/api-widgets-bootstrap.git",
         "version": "0.1.0"
     },
-    "dev": true
+    "dev": true,
+    "appType": "web"
 }
