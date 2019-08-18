@@ -1,6 +1,6 @@
 {
     "name": "ide-widgets-bootstrap",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "displayName": "Bootstrap Widgets For BlockLang IDE",
     "description": "基于 bootstrap 和 dojo 的 UI 部件库，在 BlockLang 的设计器中使用",
     "category": "Widget",
