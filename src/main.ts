@@ -1,6 +1,7 @@
 import * as blocklang from "designer-core/blocklang";
 import TextInput from "./text-input";
 import TextInputPropertiesLayout from "./text-input/propertiesLayout";
+import { widgetInstanceMap } from "@dojo/framework/core/vdom";
 
 /*******************************/
 /*****往设计器中注册 Widget******/
@@ -12,6 +13,8 @@ import TextInputPropertiesLayout from "./text-input/propertiesLayout";
 // 如果动态获取呢？
 const gitUrlSegment = { website: "github.com", owner: "blocklang", repoName: "ide-widgets-bootstrap" };
 const widgets = {
-	"text-input": { widget: TextInput, propertiesLayout: TextInputPropertiesLayout }
+	TextInput: { widget: TextInput, propertiesLayout: TextInputPropertiesLayout }
 };
 blocklang.registerWidgets(gitUrlSegment, widgets);
+
+blocklang.cacheWidgetInstanceMap(gitUrlSegment, widgetInstanceMap);
