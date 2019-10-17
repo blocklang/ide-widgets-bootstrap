@@ -1,6 +1,6 @@
 {
     "name": "ide-widgets-bootstrap",
-    "version": "0.0.1-alpha.1",
+    "version": "0.0.1-alpha.2",
     "displayName": "Bootstrap Widgets For BlockLang IDE",
     "repository": {
         "type": "git",
@@ -8,7 +8,7 @@
     },
     "scripts": {
         "dev": "dojo build --mode dev --watch --serve",
-        "build": "dojo build --mode dist",
+        "build": "dojo build --mode dist --single-bundle --omit-hash",
         "build:dev": "dojo build --mode dev",
         "build:widget": "dojo build widget --mode dist --target lib",
         "test": "dojo test",
@@ -21,23 +21,23 @@
     "dependencies": {
         "@dojo/framework": "^6.0.3",
         "@dojo/themes": "^6.0.0",
-        "tslib": "~1.9.1",
-        "designer-core": "~0.0.1-alpha.10",
-        "widgets-bootstrap": "~0.0.1-alpha.1",
         "bootstrap-classes": "~0.0.2",
-        "dojo-fontawesome": "~0.0.2"
+        "designer-core": "~0.0.1-alpha.14",
+        "dojo-fontawesome": "~0.0.2",
+        "tslib": "~1.9.1",
+        "widgets-bootstrap": "~0.0.1-alpha.1"
     },
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
-        "@dojo/cli-build-app": "^6.0.4",
+        "@dojo/cli-build-app": "^6.0.8",
         "@dojo/cli-test-intern": "^6.0.0",
         "@types/node": "~9.6.5",
-        "husky": "^3.0.8",
+        "@types/sinon": "^7.0.13",
+        "husky": "^3.0.9",
         "lint-staged": "^9.4.2",
         "prettier": "^1.18.2",
-        "typescript": "~3.4.5",
-        "@types/sinon": "^7.0.13",
-        "sinon": "^7.5.0"
+        "sinon": "^7.5.0",
+        "typescript": "~3.4.5"
     },
     "lint-staged": {
         "*.{ts,tsx,css}": [
