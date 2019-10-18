@@ -22,14 +22,14 @@
         "@dojo/framework": "^6.0.3",
         "@dojo/themes": "^6.0.0",
         "bootstrap-classes": "~0.0.2",
-        "designer-core": "~0.0.1-alpha.14",
+        "designer-core": "~0.0.1-alpha.15",
         "dojo-fontawesome": "~0.0.2",
         "tslib": "~1.9.1",
-        "widgets-bootstrap": "~0.0.1-alpha.1"
+        "widgets-bootstrap": "~0.0.1-alpha.2"
     },
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
-        "@dojo/cli-build-app": "^6.0.8",
+        "@dojo/cli-build-app": "^6.0.9",
         "@dojo/cli-test-intern": "^6.0.0",
         "@types/node": "~9.6.5",
         "@types/sinon": "^7.0.13",
