@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="TextInput" viewBox="0 0 1024 1024">
+        <title>TextInput</title>
+        <g style="pointer-events:all">
+            <g stroke-opacity="1">
+                <rect stroke="#808080" height="468.80658" width="1156.54317" y="358.18931" x="-69.53086707336425" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="32" fill="#ffffff" fill-opacity="1" stroke-opacity="1"></rect>
+                <text stroke="#808080" transform="matrix(18.141660690307617,0,0,5.216737270355225,-2768.37820148468,-2311.7603219524026) " xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="568.88889" x="167.50617" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" fill="#000000"></text>
+                <line y2="723.9999977666023" x2="57.925922926635735" y1="453.1851758326515" x1="59.70370292663574" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="32" fill="none" fill-opacity="1" stroke-opacity="1" stroke="#808080"></line>
+                <line y2="464.44444650772095" x2="138.51851331466673" y1="462.66666650772095" x1="-12.592596685333248" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="32" stroke="#808080" fill="none" fill-opacity="1" stroke-opacity="1"></line>
+                <line y2="732.1481403744507" x2="139.55556165451048" y1="730.3703603744507" x1="-11.555548345489456" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="32" stroke="#808080" fill="none" fill-opacity="1" stroke-opacity="1"></line>
+            </g>
+        </g>
+    </symbol>
+</svg>
