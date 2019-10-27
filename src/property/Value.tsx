@@ -1,24 +1,21 @@
 import { create, tsx } from "@dojo/framework/core/vdom";
 import * as c from "bootstrap-classes";
+import { SingleProperty } from "designer-core/interfaces";
 
-// FIXME: 确认可否使用 page-designer 项目中的 ChangedPropertyValue 接口
-export interface ValueProperties {
-	propertyIndex: number; // 部件的属性是按照数组存储的，一个属性对应一条记录，该属性指当前属性在数组中的索引
-	onPropertyChanged: (changedProperty: { index: number; newValue: string }) => void;
-}
-
-const factory = create().properties<ValueProperties>();
+const factory = create().properties<SingleProperty>();
 
 export default factory(function Value({ properties }) {
-	const { propertyIndex, onPropertyChanged } = properties();
+	const { index, value = "", onPropertyChanged } = properties();
 	return (
 		<div>
 			<input
 				key="input"
+				// 需要通过 value 为属性部件设置默认值，当页面中已设置过值时，此处也要同步显示
+				value={value}
 				classes={[c.form_control]}
 				oninput={(event: Event) => {
 					const value = (event.target as HTMLInputElement).value;
-					onPropertyChanged({ index: propertyIndex, newValue: value });
+					onPropertyChanged({ index, newValue: value, isChanging: false });
 				}}
 			/>
 		</div>
