@@ -15,7 +15,7 @@ export default factory(function Value({ properties }) {
 				classes={[c.form_control]}
 				oninput={(event: Event) => {
 					const value = (event.target as HTMLInputElement).value;
-					onPropertyChanged({ index, newValue: value, isChanging: false });
+					onPropertyChanged({ index, newValue: value, isChanging: false, isExpr: false });
 				}}
 			/>
 		</div>
