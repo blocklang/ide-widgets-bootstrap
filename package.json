@@ -7,7 +7,7 @@
         "url": "https://github.com/blocklang/ide-widgets-bootstrap.git"
     },
     "scripts": {
-        "dev": "dojo build --mode dev --watch --serve",
+        "dev": "dojo build --dojorc .dojorc.dev --mode dev --watch --serve",
         "build": "dojo build --mode dist --single-bundle --omit-hash && shx cp src/icons.svg output/dist",
         "build:dev": "dojo build --mode dev",
         "build:widget": "dojo build widget --mode dist --target lib",
@@ -15,17 +15,20 @@
         "test:unit": "dojo build --mode unit && dojo test --unit --config local",
         "test:functional": "dojo build --mode functional && dojo test --functional --config local",
         "test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local",
-        "precommit": "lint-staged",
         "prettier": "prettier --write 'src/**/*.{ts, tsx}' 'src/**/*.css' 'tests/**/*.{ts,tsx}'"
     },
     "dependencies": {
         "@dojo/framework": "^6.0.3",
         "@dojo/themes": "^6.0.0",
         "bootstrap-classes": "~0.0.2",
-        "designer-core": "0.0.1-alpha.22",
+        "designer-core": "0.0.1-alpha.24",
         "dojo-fontawesome": "~0.0.2",
         "tslib": "~1.9.1",
-        "widgets-bootstrap": "~0.0.1-alpha.2"
+        "widgets-bootstrap": "~0.1.7-alpha.1"
+    },
+    "peerDependencies": {
+        "@types/bootstrap": "^4.1.0",
+        "bootstrap": "^4.4.1"
     },
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
@@ -39,6 +42,11 @@
         "shx": "^0.3.2",
         "sinon": "^7.5.0",
         "typescript": "~3.4.5"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "lint-staged": {
         "*.{ts,tsx,css}": [
