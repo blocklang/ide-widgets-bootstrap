@@ -6,7 +6,8 @@
     "category": "Widget",
     "language": "Typescript",
     "components": [
-        "src/widgets/text-input"
+        "src/text-input",
+        "src/plain-text"
     ],
     "api": {
         "git": "https://github.com/blocklang/api-widgets-bootstrap.git",
