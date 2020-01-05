@@ -10,7 +10,7 @@ import * as css from "./App.m.css";
 
 const factory = create({ theme, invalidator });
 
-const plainTextWidget: AttachedWidget = {
+const plainTextWidget1: AttachedWidget = {
 	id: "plain-text-1",
 	parentId: "1",
 	apiRepoId: 1,
@@ -26,6 +26,26 @@ const plainTextWidget: AttachedWidget = {
 			name: "value",
 			valueType: "string",
 			value: "Hello World!"
+		}
+	]
+};
+
+const plainTextWidget2: AttachedWidget = {
+	id: "plain-text-2",
+	parentId: "1",
+	apiRepoId: 1,
+	widgetId: 1,
+	widgetName: "PlainText",
+	widgetCode: "0001",
+	canHasChildren: false,
+	properties: [
+		{
+			id: "1",
+			isExpr: false,
+			code: "0001",
+			name: "value",
+			valueType: "string",
+			value: ""
 		}
 	]
 };
@@ -60,18 +80,33 @@ export default factory(function App({ middleware: { theme, invalidator } }) {
 			<fieldset>
 				<legend>PlainText</legend>
 				<PlainText
-					widget={plainTextWidget}
+					widget={plainTextWidget1}
 					extendProperties={{
 						onFocused: () => {},
 						onFocusing: () => {},
 						onHighlight: () => {},
 						onUnhighlight: () => {},
 						onPropertyChanged: (changedProperty: ChangedPropertyValue) => {
-							plainTextWidget.properties[0].value = changedProperty.newValue;
+							plainTextWidget1.properties[0].value = changedProperty.newValue;
 							invalidator();
 						}
 					}}
-					value={plainTextWidget.properties[0].value}
+					value={plainTextWidget1.properties[0].value}
+				/>
+
+				<PlainText
+					widget={plainTextWidget2}
+					extendProperties={{
+						onFocused: () => {},
+						onFocusing: () => {},
+						onHighlight: () => {},
+						onUnhighlight: () => {},
+						onPropertyChanged: (changedProperty: ChangedPropertyValue) => {
+							plainTextWidget2.properties[0].value = changedProperty.newValue;
+							invalidator();
+						}
+					}}
+					value={plainTextWidget2.properties[0].value}
 				/>
 			</fieldset>
 
