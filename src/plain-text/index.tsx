@@ -74,14 +74,10 @@ export class PlainTextBase extends WidgetBase<PlainTextProperties> {
 	}
 }
 
+/**
+ * 支持直接编辑，因此不能为本部件添加遮盖层。
+ */
 export default class PlainText extends WidgetDesignableMixin(PlainTextBase) {
-	/**
-	 * 支持直接编辑，因此不能为本部件添加遮盖层。
-	 */
-	protected needOverlay(): boolean {
-		return false;
-	}
-
 	protected getCanEditingPropertyName(): string | undefined {
 		return "value";
 	}
