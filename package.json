@@ -20,11 +20,11 @@
     "dependencies": {
         "@dojo/framework": "^6.0.3",
         "@dojo/themes": "^6.0.0",
-        "bootstrap-classes": "~0.0.2",
-        "designer-core": "~0.0.1-alpha.26",
-        "dojo-fontawesome": "~0.0.2",
+        "bootstrap-classes": "^0.0.2",
+        "designer-core": "~0.0.1-alpha.39",
+        "dojo-fontawesome": "^0.0.2",
         "tslib": "~1.9.1",
-        "widgets-bootstrap": "~0.1.7-alpha.1"
+        "widgets-bootstrap": "^0.1.7-alpha.3"
     },
     "peerDependencies": {
         "@types/bootstrap": "^4.1.0",
