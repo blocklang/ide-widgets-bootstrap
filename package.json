@@ -24,7 +24,7 @@
         "designer-core": "~0.0.1-alpha.39",
         "dojo-fontawesome": "^0.0.2",
         "tslib": "~1.9.1",
-        "widgets-bootstrap": "^0.1.7-alpha.3"
+        "widgets-bootstrap": "^0.1.7-alpha.4"
     },
     "peerDependencies": {
         "@types/bootstrap": "^4.1.0",
