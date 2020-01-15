@@ -8,7 +8,7 @@ import ide from "designer-core/middleware/ide";
 import createMockIde from "designer-core/testing/mocks/middleware/ide";
 import * as css from "../../../src/plain-text/index.m.css";
 
-describe("PlainText", () => {
+describe("plain-text", () => {
 	const baseAssertion = assertionTemplate(() => (
 		<span
 			key="root"

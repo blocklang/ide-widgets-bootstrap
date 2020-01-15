@@ -10,7 +10,7 @@ import Overlay from "designer-core/widgets/overlay";
 import * as css from "../../../src/text-input/index.m.css";
 import * as c from "bootstrap-classes";
 
-describe("TextInput", () => {
+describe("text-input", () => {
 	const baseAssertion = assertionTemplate(() => (
 		<virtual>
 			<input key="root" classes={[css.root, c.form_control]} value="" oninput={() => {}} />
