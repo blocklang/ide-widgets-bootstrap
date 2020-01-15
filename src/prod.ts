@@ -1,11 +1,13 @@
 import * as blocklang from "designer-core/blocklang";
-import TextInput from "./text-input";
-import TextInputBase from "widgets-bootstrap/text-input";
+import TextInputPreview from "widgets-bootstrap/text-input";
+import TextInputIde from "./text-input";
 import TextInputPropertiesLayout from "./text-input/propertiesLayout";
 import { widgetInstanceMap } from "@dojo/framework/core/vdom";
 import { ExtensionWidgetMap, GitUrlSegment } from "designer-core/interfaces";
-import PlainTextBase from "widgets-bootstrap/plain-text";
-import PlainText from "./plain-text";
+import PlainTextPreview from "widgets-bootstrap/plain-text";
+import PlainTextIde from "./plain-text";
+import PageDataPreview from "./page-data/preview";
+import PageDataIde from "./page-data/edit";
 
 /*******************************/
 /*****往设计器中注册 Widget******/
@@ -17,8 +19,9 @@ import PlainText from "./plain-text";
 // 如果动态获取呢？
 const gitUrlSegment: GitUrlSegment = { website: "github.com", owner: "blocklang", repoName: "ide-widgets-bootstrap" };
 const widgets: ExtensionWidgetMap = {
-	TextInput: { widget: TextInputBase, ideWidget: TextInput, propertiesLayout: TextInputPropertiesLayout },
-	PlainText: { widget: PlainTextBase, ideWidget: PlainText, propertiesLayout: [] }
+	TextInput: { widget: TextInputPreview, ideWidget: TextInputIde, propertiesLayout: TextInputPropertiesLayout },
+	PlainText: { widget: PlainTextPreview, ideWidget: PlainTextIde, propertiesLayout: [] },
+	PageData: { widget: PageDataPreview, ideWidget: PageDataIde, propertiesLayout: [] }
 };
 blocklang.registerWidgets(gitUrlSegment, widgets);
 
