@@ -11,6 +11,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import * as css from "./App.m.css";
 import PageData from "./page-data/edit";
 import Store from "@dojo/framework/stores/Store";
+import Value from "./property/Value";
+import DataId from "./property/DataId";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons/faAngleDown";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
+
+library.add(faTimes, faAngleDown, faAngleRight);
 
 const factory = create({ theme, store, dimensions, invalidator });
 
@@ -94,6 +103,8 @@ const textInputWidget: AttachedWidget = {
 	]
 };
 
+let dataId = "1";
+
 export default factory(function App({ middleware: { theme, store, dimensions, invalidator } }) {
 	if (!theme.get()) {
 		theme.set(dojo);
@@ -130,6 +141,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 
 	return (
 		<div classes={[css.root]}>
+			<h1>部件</h1>
 			<fieldset>
 				<legend>PlainText</legend>
 				<PlainText
@@ -206,6 +218,26 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 						onUnhighlight: () => {}
 					}}
 					value="Text Input"
+				/>
+			</fieldset>
+
+			<hr />
+			<h2>属性</h2>
+
+			<fieldset>
+				<legend>Value</legend>
+				<Value index={0} onPropertyChanged={() => {}} />
+			</fieldset>
+
+			<fieldset>
+				<legend>DataId</legend>
+				<DataId
+					index={0}
+					value={dataId}
+					onPropertyChanged={({ newValue }) => {
+						dataId = newValue;
+						invalidator();
+					}}
 				/>
 			</fieldset>
 		</div>

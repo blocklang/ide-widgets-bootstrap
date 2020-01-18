@@ -1,6 +1,6 @@
 import { tsx, create } from "@dojo/framework/core/vdom";
 import store from "designer-core/store";
-import { getValue } from "designer-core/pageData";
+import { getValue } from "designer-core/utils/pageDataUtil";
 import { isObject } from "util";
 
 export interface PageDataProperties {

@@ -3,18 +3,23 @@ import { SingleProperty } from "designer-core/interfaces";
 import FontAwesomeIcon from "dojo-fontawesome/FontAwesomeIcon";
 import * as c from "bootstrap-classes";
 import * as css from "./DataId.m.css";
+import pageData from "designer-core/middleware/pageData";
+import { convertDataIdToJsonPath } from "designer-core/utils/pageDataUtil";
 import DataTree from "./support/DataTree";
 
-const factory = create().properties<SingleProperty>();
+const factory = create({ pageData }).properties<SingleProperty>();
 
-export default factory(function DataId({ properties }) {
-	// 此处的 value 值是已经准备好的 jsonPath
+export default factory(function DataId({ properties, middleware: { pageData } }) {
+	// 传进来的 value 是 dataId
 	const { index, value = "", onPropertyChanged } = properties();
+
+	const allData = pageData.get();
+	const jsonPath = convertDataIdToJsonPath(allData, value);
 
 	return (
 		<div classes={[css.root]}>
 			<div classes={[css.inputBorder]}>
-				{value}
+				{jsonPath}
 				<span
 					classes={[c.float_right, css.clear]}
 					onclick={() => {
@@ -24,7 +29,16 @@ export default factory(function DataId({ properties }) {
 					<FontAwesomeIcon icon="times" />
 				</span>
 			</div>
-			<DataTree />
+			<DataTree
+				data={allData}
+				selectedDataItemId={value}
+				onSelectDataItem={(dataId: string) => {
+					onPropertyChanged({ index, newValue: dataId, isChanging: false, isExpr: true });
+				}}
+				onUnselectDataItem={() => {
+					onPropertyChanged({ index, newValue: "", isChanging: false, isExpr: true });
+				}}
+			/>
 		</div>
 	);
 });
