@@ -105,7 +105,7 @@ export default factory(function DataTree({ properties, middleware: { icache } })
 	function _renderVariableName(dataItem: PageDataItem, index: number, parentDataItem: PageDataItem) {
 		return (
 			<span key="variable" classes={[c.mr_1]}>
-				{parentDataItem.type === "Array" ? index : dataItem.name}
+				{parentDataItem.type === "Array" ? `${index}` : dataItem.name}
 			</span>
 		);
 	}
