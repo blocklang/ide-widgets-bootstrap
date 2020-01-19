@@ -234,7 +234,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 				<DataId
 					index={0}
 					value={dataId}
-					onPropertyChanged={({ newValue }) => {
+					onPropertyChanged={({ newValue }: ChangedPropertyValue) => {
 						dataId = newValue;
 						invalidator();
 					}}

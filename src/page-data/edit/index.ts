@@ -1,15 +1,15 @@
 import { create, v } from "@dojo/framework/core/vdom";
 import * as css from "./index.m.css";
 import * as c from "bootstrap-classes";
-import store from "designer-core/store";
+import pageData from "designer-core/middleware/pageData";
 import { convertDataIdToJsonPath, getValue } from "designer-core/utils/pageDataUtil";
 import ide from "designer-core/middleware/ide";
 import { isObject } from "util";
 import { PageDataProperties } from "../preview";
 
-const factory = create({ store, ide }).properties<PageDataProperties>();
+const factory = create({ pageData, ide }).properties<PageDataProperties>();
 
-export default factory(function PageDataIde({ properties, middleware: { store, ide } }) {
+export default factory(function PageDataIde({ properties, middleware: { pageData, ide } }) {
 	const { dataId = "" } = properties();
 
 	ide.config("root");
@@ -24,10 +24,9 @@ export default factory(function PageDataIde({ properties, middleware: { store, i
 		];
 	}
 
-	const { get, path } = store;
-	const pageData = get(path("pageModel", "data"));
+	const allData = pageData.get();
 
-	let value = getValue(pageData, dataId);
+	let value = getValue(allData, dataId);
 	if (!value) {
 		return [
 			v("span", { key: "root", classes: [css.root], ...activeWidgetEvents }, [
@@ -46,7 +45,7 @@ export default factory(function PageDataIde({ properties, middleware: { store, i
 	// 2. 绑定 onmouseover 事件，以添加高亮效果
 	// 3. 绑定 onmouseout 事件，在离开设计器时移除高亮效果
 	// 4. 绑定 oninput 事件，以支持在部件中编辑指定的属性
-	const jsonPath = convertDataIdToJsonPath(pageData, dataId);
+	const jsonPath = convertDataIdToJsonPath(allData, dataId);
 	return [
 		v("span", { key: "root", classes: [css.root], ...activeWidgetEvents }, [
 			v("span", { classes: [c.badge, c.badge_secondary] }, [jsonPath]),
