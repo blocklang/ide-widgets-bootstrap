@@ -38,7 +38,7 @@ export default factory(function PlainText({ properties, middleware: { dimensions
 	// 双击，支持编辑
 	return [
 		v("span", { key: "root", classes: [css.root], styles: rootStyles, ...ide.activeWidgetEvents() }, [
-			v("pre", { classes: [css.pre, emptyValueClass] }, [v("span", [value]), v("br")]),
+			v("pre", { key: "pre", classes: [css.pre, emptyValueClass] }, [v("span", [value]), v("br")]),
 			!_focused &&
 				v(
 					"div",

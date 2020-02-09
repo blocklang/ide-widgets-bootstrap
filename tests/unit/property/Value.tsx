@@ -12,7 +12,7 @@ describe("property/Value", () => {
 	const noop = () => {};
 
 	it("default properties", () => {
-		const h = harness(() => <Value index={0} onPropertyChanged={noop} />);
+		const h = harness(() => <Value index={0} onPropertyChanged={noop} onChangePaneLayout={noop} />);
 
 		h.expect(() => (
 			<div>
@@ -23,7 +23,9 @@ describe("property/Value", () => {
 
 	it("oninput", () => {
 		const onPropertyChangedStub = stub();
-		const h = harness(() => <Value index={0} onPropertyChanged={onPropertyChangedStub} />);
+		const h = harness(() => (
+			<Value index={0} onPropertyChanged={onPropertyChangedStub} onChangePaneLayout={noop} />
+		));
 
 		h.trigger("@input", "oninput", { target: { value: "1" } });
 

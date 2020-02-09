@@ -13,13 +13,15 @@ import PageData from "./page-data/edit";
 import Store from "@dojo/framework/stores/Store";
 import Value from "./property/Value";
 import DataId from "./property/DataId";
+import Event from "./property/Event";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons/faAngleDown";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
+import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
 
-library.add(faTimes, faAngleDown, faAngleRight);
+library.add(faTimes, faAngleDown, faAngleRight, faEdit);
 
 const factory = create({ theme, store, dimensions, invalidator });
 
@@ -226,7 +228,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 
 			<fieldset>
 				<legend>Value</legend>
-				<Value index={0} onPropertyChanged={() => {}} />
+				<Value index={0} onPropertyChanged={() => {}} onChangePaneLayout={() => {}} />
 			</fieldset>
 
 			<fieldset>
@@ -237,6 +239,20 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 					onPropertyChanged={({ newValue }: ChangedPropertyValue) => {
 						dataId = newValue;
 						invalidator();
+					}}
+				/>
+			</fieldset>
+
+			<hr />
+			<h2>事件</h2>
+
+			<fieldset>
+				<legend>Event</legend>
+				<Event
+					index={0}
+					onPropertyChanged={() => {}}
+					onChangePaneLayout={() => {
+						alert("trigger onChangePaneLayout event");
 					}}
 				/>
 			</fieldset>
