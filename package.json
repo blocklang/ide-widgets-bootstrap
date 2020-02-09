@@ -21,7 +21,7 @@
         "@dojo/framework": "^6.0.4",
         "@dojo/themes": "^6.0.0",
         "bootstrap-classes": "^0.0.3-alpha.1",
-        "designer-core": "~0.0.1-alpha.49",
+        "designer-core": "~0.0.1-alpha.52",
         "dojo-fontawesome": "^0.0.3-alpha.1",
         "tslib": "~1.10.0",
         "widgets-bootstrap": "^0.1.7-alpha.4"
