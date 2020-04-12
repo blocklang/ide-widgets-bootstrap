@@ -20,81 +20,81 @@ describe("page-data/edit", () => {
 			"span",
 			{ key: "root", classes: [css.root], onmouseout: () => {}, onmouseover: () => {}, onmouseup: () => {} },
 			[v("span", { classes: [c.text_secondary] }, ["未绑定变量"])]
-		)
+		),
 	]);
 
-	it("dataId is undefined", () => {
+	it("dataItemId is undefined", () => {
 		const mockIde = createMockIde();
 		const h = harness(() => w(PageData, { widget: { id: "1" }, extendProperties: {} }), {
-			middleware: [[ide, mockIde]]
+			middleware: [[ide, mockIde]],
 		});
 		h.expect(baseAssertion);
 	});
 
-	it("dataId is defined but not exist in page data", () => {
+	it("dataItemId is defined but not exist in page data", () => {
 		const dataIdNotFoundAssertion = baseAssertion.replaceChildren("@root", () => [
-			v("span", { classes: [c.text_secondary] }, ["绑定的变量已不存在"])
+			v("span", { classes: [c.text_secondary] }, ["绑定的变量已不存在"]),
 		]);
 		const mockStore = createMockStoreMiddleware<State>();
 		mockStore((path) => [add(path("pageModel", "data"), [])]);
 
 		const mockIde = createMockIde();
 
-		const h = harness(() => w(PageData, { dataId: "1", widget: { id: "1" }, extendProperties: {} }), {
+		const h = harness(() => w(PageData, { dataItemId: "1", widget: { id: "1" }, extendProperties: {} }), {
 			middleware: [
 				[ide, mockIde],
-				[store, mockStore]
-			]
+				[store, mockStore],
+			],
 		});
 
 		h.expect(dataIdNotFoundAssertion);
 	});
 
-	it("dataId is defined and value is String type", () => {
+	it("dataItemId is defined and value is String type", () => {
 		const stringValueAssertion = baseAssertion.replaceChildren("@root", () => [
 			v("span", { classes: [c.badge, c.badge_secondary] }, ["$.str"]),
-			"Hello"
+			"Hello",
 		]);
 		const mockStore = createMockStoreMiddleware<State>();
 		mockStore((path) => [
 			add(path("pageModel", "data"), [
 				{ id: "1", parentId: "-1", name: "$", type: "Object", open: true },
-				{ id: "2", parentId: "1", name: "str", value: "Hello", type: "String", open: true }
-			])
+				{ id: "2", parentId: "1", name: "str", value: "Hello", type: "String", open: true },
+			]),
 		]);
 
 		const mockIde = createMockIde();
-		const h = harness(() => w(PageData, { dataId: "2", widget: { id: "1" }, extendProperties: {} }), {
+		const h = harness(() => w(PageData, { dataItemId: "2", widget: { id: "1" }, extendProperties: {} }), {
 			middleware: [
 				[ide, mockIde],
-				[store, mockStore]
-			]
+				[store, mockStore],
+			],
 		});
 
 		h.expect(stringValueAssertion);
 	});
 
-	it("dataId is defined and value is Object type", () => {
+	it("dataItemId is defined and value is Object type", () => {
 		const objectValueAssertion = baseAssertion.replaceChildren("@root", () => [
 			v("span", { classes: [c.badge, c.badge_secondary] }, ["$.obj1"]),
-			`{"str":"Hello"}`
+			`{"str":"Hello"}`,
 		]);
 		const mockStore = createMockStoreMiddleware<State>();
 		mockStore((path) => [
 			add(path("pageModel", "data"), [
 				{ id: "1", parentId: "-1", name: "$", type: "Object", open: true },
 				{ id: "2", parentId: "1", name: "obj1", type: "Object", open: true },
-				{ id: "3", parentId: "2", name: "str", value: "Hello", type: "String", open: true }
-			])
+				{ id: "3", parentId: "2", name: "str", value: "Hello", type: "String", open: true },
+			]),
 		]);
 
 		const mockIde = createMockIde();
 
-		const h = harness(() => w(PageData, { dataId: "2", widget: { id: "1" }, extendProperties: {} }), {
+		const h = harness(() => w(PageData, { dataItemId: "2", widget: { id: "1" }, extendProperties: {} }), {
 			middleware: [
 				[ide, mockIde],
-				[store, mockStore]
-			]
+				[store, mockStore],
+			],
 		});
 
 		h.expect(objectValueAssertion);

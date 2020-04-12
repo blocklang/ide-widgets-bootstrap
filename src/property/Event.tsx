@@ -25,7 +25,7 @@ export default factory(function Event({ properties }) {
 						const newValue = value === undefined ? uuid().replace("-", "") : value;
 						onPropertyChanged({ index, newValue, isChanging: false, isExpr: false });
 						onChangePaneLayout(
-							{ funcViewType: "funcItem" },
+							{}, // 注意，该属性值没有用到
 							{ propertyIndex: index, propertyValue: newValue }
 						);
 					}}

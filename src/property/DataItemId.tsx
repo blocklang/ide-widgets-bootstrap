@@ -2,7 +2,7 @@ import { create, tsx } from "@dojo/framework/core/vdom";
 import { SingleProperty } from "designer-core/interfaces";
 import FontAwesomeIcon from "dojo-fontawesome/FontAwesomeIcon";
 import * as c from "bootstrap-classes";
-import * as css from "./DataId.m.css";
+import * as css from "./DataItemId.m.css";
 import pageData from "designer-core/middleware/pageData";
 import { convertDataIdToJsonPath } from "designer-core/utils/pageDataUtil";
 import DataTree from "./support/DataTree";

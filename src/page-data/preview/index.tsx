@@ -4,23 +4,24 @@ import * as blocklang from "designer-core/blocklang";
 import { isObject } from "util";
 
 export interface PageDataProperties {
-	dataId?: string;
+	dataItemId?: string;
 }
 
 const store = blocklang.getStoreMiddleware();
 const factory = create({ store }).properties<PageDataProperties>();
 
+// TODO: 目前实现的逻辑是获取页面数据的默认值，需要支持获取在预览时设置的值
 export default factory(function PageDataIde({ properties, middleware: { store } }) {
-	const { dataId = "" } = properties();
+	const { dataItemId = "" } = properties();
 
-	if (dataId.trim() === "") {
+	if (dataItemId.trim() === "") {
 		return <virtual key="root"></virtual>;
 	}
 
 	const { get, path } = store;
 	const pageData = get(path("pageModel", "data"));
 
-	let value = getValue(pageData, dataId);
+	let value = getValue(pageData, dataItemId);
 	if (!value) {
 		return <virtual key="root"></virtual>;
 	}

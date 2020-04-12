@@ -1,9 +1,9 @@
-import DataId from "../../property/DataId";
+import DataItemId from "../../property/DataItemId";
 
 export default [
 	{
-		propertyName: "dataId",
+		propertyName: "dataItemId",
 		propertyLabel: "页面数据",
-		propertyWidget: DataId
-	}
+		propertyWidget: DataItemId,
+	},
 ];

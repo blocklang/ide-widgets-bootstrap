@@ -12,7 +12,7 @@ import * as css from "./App.m.css";
 import PageData from "./page-data/edit";
 import Store from "@dojo/framework/stores/Store";
 import Value from "./property/Value";
-import DataId from "./property/DataId";
+import DataId from "./property/DataItemId";
 import Event from "./property/Event";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -40,9 +40,9 @@ const plainTextWidget1: AttachedWidget = {
 			code: "0001",
 			name: "value",
 			valueType: "string",
-			value: "Hello World!"
-		}
-	]
+			value: "Hello World!",
+		},
+	],
 };
 
 const plainTextWidget2: AttachedWidget = {
@@ -60,9 +60,9 @@ const plainTextWidget2: AttachedWidget = {
 			code: "0001",
 			name: "value",
 			valueType: "string",
-			value: ""
-		}
-	]
+			value: "",
+		},
+	],
 };
 
 const pageDataWidget: AttachedWidget = {
@@ -80,9 +80,9 @@ const pageDataWidget: AttachedWidget = {
 			code: "0002",
 			name: "dataId",
 			valueType: "string",
-			value: "2"
-		}
-	]
+			value: "2",
+		},
+	],
 };
 
 const textInputWidget: AttachedWidget = {
@@ -100,9 +100,9 @@ const textInputWidget: AttachedWidget = {
 			code: "0002",
 			name: "value",
 			valueType: "string",
-			value: "Text Input"
-		}
-	]
+			value: "Text Input",
+		},
+	],
 };
 
 let dataId = "1";
@@ -120,14 +120,14 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 					parentId: "-1",
 					name: "$",
 					type: "Object",
-					open: true
+					open: true,
 				},
 				{
 					id: "2",
 					parentId: "1",
 					name: "a",
 					type: "Object",
-					open: false
+					open: false,
 				},
 				{
 					id: "3",
@@ -135,9 +135,9 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 					name: "label",
 					type: "String",
 					value: "value",
-					open: false
-				}
-			])
+					open: false,
+				},
+			]),
 		]);
 	}) as any);
 
@@ -165,7 +165,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 							console.log("plain-text: onPropertyChanged");
 							plainTextWidget1.properties[0].value = changedProperty.newValue;
 							invalidator();
-						}
+						},
 					}}
 					value={plainTextWidget1.properties[0].value}
 				/>
@@ -180,7 +180,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 						onPropertyChanged: (changedProperty: ChangedPropertyValue) => {
 							plainTextWidget2.properties[0].value = changedProperty.newValue;
 							invalidator();
-						}
+						},
 					}}
 					value={plainTextWidget2.properties[0].value}
 				/>
@@ -202,7 +202,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 						},
 						onUnhighlight: () => {
 							console.log("onUnhighlight");
-						}
+						},
 					}}
 					middlewares={{ dimensions }}
 					dataId="2"
@@ -217,7 +217,7 @@ export default factory(function App({ middleware: { theme, store, dimensions, in
 						onFocused: () => {},
 						onFocusing: () => {},
 						onHighlight: () => {},
-						onUnhighlight: () => {}
+						onUnhighlight: () => {},
 					}}
 					value="Text Input"
 				/>

@@ -10,19 +10,19 @@ import { PageDataProperties } from "../preview";
 const factory = create({ pageData, ide }).properties<PageDataProperties>();
 
 export default factory(function PageDataIde({ properties, middleware: { pageData, ide } }) {
-	const { dataId = "" } = properties();
+	const { dataItemId = "" } = properties();
 
 	ide.config("root");
 	const activeWidgetEvents = ide.activeWidgetEvents();
 
 	let children = [];
 
-	if (dataId.trim() === "") {
+	if (dataItemId.trim() === "") {
 		children.push(v("span", { classes: [c.text_secondary] }, ["未绑定变量"]));
 	} else {
 		const allData = pageData.get();
 
-		let value = getValue(allData, dataId);
+		let value = getValue(allData, dataItemId);
 		if (value === undefined) {
 			children.push(v("span", { classes: [c.text_secondary] }, ["绑定的变量已不存在"]));
 		} else {
@@ -35,7 +35,7 @@ export default factory(function PageDataIde({ properties, middleware: { pageData
 			// 2. 绑定 onmouseover 事件，以添加高亮效果
 			// 3. 绑定 onmouseout 事件，在离开设计器时移除高亮效果
 			// 4. 绑定 oninput 事件，以支持在部件中编辑指定的属性
-			const jsonPath = convertDataIdToJsonPath(allData, dataId);
+			const jsonPath = convertDataIdToJsonPath(allData, dataItemId);
 			children.push(v("span", { classes: [c.badge, c.badge_secondary] }, [jsonPath]));
 			children.push(value);
 		}
@@ -43,6 +43,6 @@ export default factory(function PageDataIde({ properties, middleware: { pageData
 
 	return [
 		v("span", { key: "root", classes: [css.root], ...activeWidgetEvents }, children),
-		ide.alwaysRenderActiveWidget()
+		ide.alwaysRenderActiveWidget(),
 	];
 });
