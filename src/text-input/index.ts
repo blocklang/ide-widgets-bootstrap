@@ -1,7 +1,7 @@
 import { create, v, w } from "@dojo/framework/core/vdom";
 import { TextInputProperties } from "widgets-bootstrap/text-input";
-import ide from "designer-core/middleware/ide";
-import Overlay from "designer-core/widgets/overlay";
+import ide from "@blocklang/designer-core/middleware/ide";
+import Overlay from "@blocklang/designer-core/widgets/overlay";
 import * as css from "./index.m.css";
 import * as c from "bootstrap-classes";
 
@@ -20,9 +20,9 @@ export default factory(function TextInput({ properties, middleware: { ide } }) {
 				event.stopPropagation();
 				const value = (event.target as HTMLInputElement).value;
 				onValue && onValue(value);
-			}
+			},
 		}),
 		w(Overlay, { ...ide.getFocusNodeOffset(), ...ide.activeWidgetEvents() }),
-		ide.alwaysRenderActiveWidget()
+		ide.alwaysRenderActiveWidget(),
 	];
 });

@@ -1,6 +1,6 @@
 import { create, tsx } from "@dojo/framework/core/vdom";
 import * as c from "bootstrap-classes";
-import { SingleProperty } from "designer-core/interfaces";
+import { SingleProperty } from "@blocklang/designer-core/interfaces";
 
 const factory = create().properties<SingleProperty>();
 

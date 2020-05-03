@@ -4,10 +4,10 @@ import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
 import harness from "@dojo/framework/testing/harness";
 import { tsx } from "@dojo/framework/core/vdom";
 import createMockStoreMiddleware from "@dojo/framework/testing/mocks/middleware/store";
-import store from "designer-core/store";
+import store from "@blocklang/designer-core/store";
 
 import PageData from "../../../../src/page-data/preview";
-import { State } from "designer-core/interfaces";
+import { State } from "@blocklang/designer-core/interfaces";
 import { add } from "@dojo/framework/stores/state/operations";
 
 describe("page-data/preview", () => {

@@ -1,6 +1,6 @@
 import { create, tsx } from "@dojo/framework/core/vdom";
 import { uuid } from "@dojo/framework/core/util";
-import { SingleProperty } from "designer-core/interfaces";
+import { SingleProperty } from "@blocklang/designer-core/interfaces";
 import FontAwesomeIcon from "dojo-fontawesome/FontAwesomeIcon";
 import * as c from "bootstrap-classes";
 import * as css from "./Event.m.css";

@@ -1,10 +1,10 @@
-import * as blocklang from "designer-core/blocklang";
+import * as blocklang from "@blocklang/designer-core/blocklang";
 import TextInputPreview from "widgets-bootstrap/text-input";
 import TextInputIde from "./text-input";
 import TextInputPropertiesLayout from "./text-input/propertiesLayout";
 import PageDataPropertiesLayout from "./page-data/edit/propertiesLayout";
 import { widgetInstanceMap } from "@dojo/framework/core/vdom";
-import { ExtensionWidgetMap, GitUrlSegment } from "designer-core/interfaces";
+import { ExtensionWidgetMap, GitUrlSegment } from "@blocklang/designer-core/interfaces";
 import PlainTextPreview from "widgets-bootstrap/plain-text";
 import PlainTextIde from "./plain-text";
 import PageDataPreview from "./page-data/preview";
@@ -22,7 +22,7 @@ const gitUrlSegment: GitUrlSegment = { website: "github.com", owner: "blocklang"
 const widgets: ExtensionWidgetMap = {
 	TextInput: { widget: TextInputPreview, ideWidget: TextInputIde, propertiesLayout: TextInputPropertiesLayout },
 	PlainText: { widget: PlainTextPreview, ideWidget: PlainTextIde, propertiesLayout: [] },
-	PageData: { widget: PageDataPreview, ideWidget: PageDataIde, propertiesLayout: PageDataPropertiesLayout }
+	PageData: { widget: PageDataPreview, ideWidget: PageDataIde, propertiesLayout: PageDataPropertiesLayout },
 };
 blocklang.registerWidgets(gitUrlSegment, widgets);
 

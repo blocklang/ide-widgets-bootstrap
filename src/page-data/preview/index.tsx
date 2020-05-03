@@ -1,6 +1,6 @@
 import { tsx, create } from "@dojo/framework/core/vdom";
-import { getValue } from "designer-core/utils/pageDataUtil";
-import * as blocklang from "designer-core/blocklang";
+import { getValue } from "@blocklang/designer-core/utils/pageDataUtil";
+import * as blocklang from "@blocklang/designer-core/blocklang";
 import { isObject } from "util";
 
 export interface PageDataProperties {

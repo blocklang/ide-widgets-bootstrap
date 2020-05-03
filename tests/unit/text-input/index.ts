@@ -4,9 +4,9 @@ import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
 import harness from "@dojo/framework/testing/harness";
 import { v, w } from "@dojo/framework/core/vdom";
 import TextInput from "../../../src/text-input";
-import ide from "designer-core/middleware/ide";
-import createMockIde from "designer-core/testing/mocks/middleware/ide";
-import Overlay from "designer-core/widgets/overlay";
+import ide from "@blocklang/designer-core/middleware/ide";
+import createMockIde from "@blocklang/designer-core/testing/mocks/middleware/ide";
+import Overlay from "@blocklang/designer-core/widgets/overlay";
 import * as css from "../../../src/text-input/index.m.css";
 import * as c from "bootstrap-classes";
 
@@ -20,8 +20,8 @@ describe("text-input", () => {
 			width: 4,
 			onmouseout: () => {},
 			onmouseover: () => {},
-			onmouseup: () => {}
-		})
+			onmouseup: () => {},
+		}),
 	]);
 
 	it("default properties", () => {
@@ -31,10 +31,10 @@ describe("text-input", () => {
 			offset: { top: 1, left: 2, height: 3, width: 4 },
 			size: { height: 3, width: 4 },
 			scroll: { top: 1, left: 2, height: 3, width: 4 },
-			client: { top: 1, left: 2, height: 3, width: 4 }
+			client: { top: 1, left: 2, height: 3, width: 4 },
 		});
 		const h = harness(() => w(TextInput, { widget: { id: 1 }, extendProperties: {} }), {
-			middleware: [[ide, mockIde]]
+			middleware: [[ide, mockIde]],
 		});
 
 		h.expect(baseAssertion);

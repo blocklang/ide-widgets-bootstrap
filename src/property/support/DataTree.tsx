@@ -1,11 +1,11 @@
 import { create, tsx } from "@dojo/framework/core/vdom";
 import icache from "@dojo/framework/core/middleware/icache";
-import pageData from "designer-core/middleware/ide";
-import { PageDataItem } from "designer-core/interfaces";
+import pageData from "@blocklang/designer-core/middleware/ide";
+import { PageDataItem } from "@blocklang/designer-core/interfaces";
 import FontAwesomeIcon from "dojo-fontawesome/FontAwesomeIcon";
 import * as c from "bootstrap-classes";
 import * as css from "./DataTree.m.css";
-import { getChildrenIndex } from "designer-core/utils/treeUtil";
+import { getChildrenIndex } from "@blocklang/designer-core/utils/treeUtil";
 
 const ROOT_PARENT_ID = "-1";
 
@@ -55,7 +55,7 @@ export default factory(function DataTree({ properties, middleware: { icache } })
 				classes={[
 					c.position_relative,
 					c.border,
-					selectedDataItemId === dataItem.id ? c.border_primary : c.border_white
+					selectedDataItemId === dataItem.id ? c.border_primary : c.border_white,
 				]}
 				onclick={(event: MouseEvent) => {
 					event.stopPropagation();
@@ -137,7 +137,7 @@ export default factory(function DataTree({ properties, middleware: { icache } })
 				classes={[
 					c.position_relative,
 					c.border,
-					selectedDataItemId === data[0].id ? c.border_primary : c.border_white
+					selectedDataItemId === data[0].id ? c.border_primary : c.border_white,
 				]}
 				onclick={(event: MouseEvent) => {
 					event.stopPropagation();

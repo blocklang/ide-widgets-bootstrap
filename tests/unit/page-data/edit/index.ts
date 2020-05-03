@@ -6,10 +6,10 @@ import { v, w } from "@dojo/framework/core/vdom";
 import { add } from "@dojo/framework/stores/state/operations";
 import createMockStoreMiddleware from "@dojo/framework/testing/mocks/middleware/store";
 import * as c from "bootstrap-classes";
-import store from "designer-core/store";
-import { State } from "designer-core/interfaces";
-import ide from "designer-core/middleware/ide";
-import createMockIde from "designer-core/testing/mocks/middleware/ide";
+import store from "@blocklang/designer-core/store";
+import { State } from "@blocklang/designer-core/interfaces";
+import ide from "@blocklang/designer-core/middleware/ide";
+import createMockIde from "@blocklang/designer-core/testing/mocks/middleware/ide";
 import PageData from "../../../../src/page-data/edit";
 import * as css from "../../../../src/page-data/edit/index.m.css";
 

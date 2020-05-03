@@ -1,9 +1,9 @@
 import { create, v } from "@dojo/framework/core/vdom";
 import * as css from "./index.m.css";
 import * as c from "bootstrap-classes";
-import pageData from "designer-core/middleware/pageData";
-import { convertDataIdToJsonPath, getValue } from "designer-core/utils/pageDataUtil";
-import ide from "designer-core/middleware/ide";
+import pageData from "@blocklang/designer-core/middleware/pageData";
+import { convertDataIdToJsonPath, getValue } from "@blocklang/designer-core/utils/pageDataUtil";
+import ide from "@blocklang/designer-core/middleware/ide";
 import { isObject } from "util";
 import { PageDataProperties } from "../preview";
 

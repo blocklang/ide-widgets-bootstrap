@@ -2,7 +2,7 @@ import { create, v } from "@dojo/framework/core/vdom";
 
 import dimensions from "@dojo/framework/core/middleware/dimensions";
 import * as css from "./index.m.css";
-import ide from "designer-core/middleware/ide";
+import ide from "@blocklang/designer-core/middleware/ide";
 
 export interface PlainTextProperties {
 	value?: string;
@@ -47,7 +47,7 @@ export default factory(function PlainText({ properties, middleware: { dimensions
 						classes: [css.div],
 						ondblclick: () => {
 							ide.cache("textareaFocus", true);
-						}
+						},
 					},
 					[value]
 				),
@@ -66,11 +66,11 @@ export default factory(function PlainText({ properties, middleware: { dimensions
 						oninput: (event: KeyboardEvent) => {
 							const value = (event.target as HTMLTextAreaElement).value;
 							ide.changePropertyValue(value);
-						}
+						},
 					},
 					[value]
-				)
+				),
 		]),
-		ide.alwaysRenderActiveWidget()
+		ide.alwaysRenderActiveWidget(),
 	];
 });

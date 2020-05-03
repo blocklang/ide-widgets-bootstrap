@@ -4,8 +4,8 @@ import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
 import harness from "@dojo/framework/testing/harness";
 import { v, w } from "@dojo/framework/core/vdom";
 import PlainText from "../../../src/plain-text";
-import ide from "designer-core/middleware/ide";
-import createMockIde from "designer-core/testing/mocks/middleware/ide";
+import ide from "@blocklang/designer-core/middleware/ide";
+import createMockIde from "@blocklang/designer-core/testing/mocks/middleware/ide";
 import * as css from "../../../src/plain-text/index.m.css";
 
 describe("plain-text", () => {
@@ -18,13 +18,13 @@ describe("plain-text", () => {
 				styles: {},
 				onmouseout: () => {},
 				onmouseover: () => {},
-				onmouseup: () => {}
+				onmouseup: () => {},
 			},
 			[
 				v("pre", { key: "pre", classes: [css.pre, css.divEmpty] }, [v("span"), v("br")]),
-				v("div", { key: "readonlyDiv", classes: [css.div], ondblclick: () => {} })
+				v("div", { key: "readonlyDiv", classes: [css.div], ondblclick: () => {} }),
 			]
-		)
+		),
 	]);
 
 	it("default properties", () => {
@@ -33,7 +33,7 @@ describe("plain-text", () => {
 			() =>
 				w(PlainText, {
 					widget: { properties: [{ name: "value" }] },
-					extendProperties: { onPropertyChanged: () => {}, autoFocus: () => false }
+					extendProperties: { onPropertyChanged: () => {}, autoFocus: () => false },
 				}),
 			{ middleware: [[ide, mockIde]] }
 		);
@@ -53,8 +53,8 @@ describe("plain-text", () => {
 					spellcheck: false,
 					focus: () => true,
 					onblur: () => {},
-					oninput: () => {}
-				})
+					oninput: () => {},
+				}),
 			]);
 		const mockIde = createMockIde();
 
@@ -62,7 +62,7 @@ describe("plain-text", () => {
 			() =>
 				w(PlainText, {
 					widget: { properties: [{ name: "value" }] },
-					extendProperties: { onPropertyChanged: () => {}, autoFocus: () => false }
+					extendProperties: { onPropertyChanged: () => {}, autoFocus: () => false },
 				}),
 			{ middleware: [[ide, mockIde]] }
 		);
