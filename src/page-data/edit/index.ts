@@ -1,6 +1,6 @@
 import { create, v } from "@dojo/framework/core/vdom";
 import * as css from "./index.m.css";
-import * as c from "bootstrap-classes";
+import * as c from "@blocklang/bootstrap-classes";
 import pageData from "@blocklang/designer-core/middleware/pageData";
 import { convertDataIdToJsonPath, getValue } from "@blocklang/designer-core/utils/pageDataUtil";
 import ide from "@blocklang/designer-core/middleware/ide";

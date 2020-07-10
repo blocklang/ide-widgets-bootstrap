@@ -3,7 +3,7 @@ import { TextInputProperties } from "widgets-bootstrap/text-input";
 import ide from "@blocklang/designer-core/middleware/ide";
 import Overlay from "@blocklang/designer-core/widgets/overlay";
 import * as css from "./index.m.css";
-import * as c from "bootstrap-classes";
+import * as c from "@blocklang/bootstrap-classes";
 
 const factory = create({ ide }).properties<TextInputProperties>();
 

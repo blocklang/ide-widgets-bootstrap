@@ -1,7 +1,7 @@
 const { describe, it } = intern.getInterface("bdd");
 
-import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
-import harness from "@dojo/framework/testing/harness";
+import assertionTemplate from "@dojo/framework/testing/harness/assertionTemplate";
+import harness from "@dojo/framework/testing/harness/harness";
 import { v, w } from "@dojo/framework/core/vdom";
 import PlainText from "../../../src/plain-text";
 import ide from "@blocklang/designer-core/middleware/ide";

@@ -1,7 +1,7 @@
 import { create, tsx } from "@dojo/framework/core/vdom";
 import { SingleProperty } from "@blocklang/designer-core/interfaces";
-import FontAwesomeIcon from "dojo-fontawesome/FontAwesomeIcon";
-import * as c from "bootstrap-classes";
+import FontAwesomeIcon from "@blocklang/dojo-fontawesome/FontAwesomeIcon";
+import * as c from "@blocklang/bootstrap-classes";
 import * as css from "./DataItemId.m.css";
 import pageData from "@blocklang/designer-core/middleware/pageData";
 import { convertDataIdToJsonPath } from "@blocklang/designer-core/utils/pageDataUtil";

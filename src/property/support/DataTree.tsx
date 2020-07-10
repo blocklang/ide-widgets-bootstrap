@@ -2,8 +2,8 @@ import { create, tsx } from "@dojo/framework/core/vdom";
 import icache from "@dojo/framework/core/middleware/icache";
 import pageData from "@blocklang/designer-core/middleware/ide";
 import { PageDataItem } from "@blocklang/designer-core/interfaces";
-import FontAwesomeIcon from "dojo-fontawesome/FontAwesomeIcon";
-import * as c from "bootstrap-classes";
+import FontAwesomeIcon from "@blocklang/dojo-fontawesome/FontAwesomeIcon";
+import * as c from "@blocklang/bootstrap-classes";
 import * as css from "./DataTree.m.css";
 import { getChildrenIndex } from "@blocklang/designer-core/utils/treeUtil";
 

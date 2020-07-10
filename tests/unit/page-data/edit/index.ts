@@ -1,11 +1,11 @@
 const { describe, it } = intern.getInterface("bdd");
 
-import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
-import harness from "@dojo/framework/testing/harness";
+import assertionTemplate from "@dojo/framework/testing/harness/assertionTemplate";
+import harness from "@dojo/framework/testing/harness/harness";
 import { v, w } from "@dojo/framework/core/vdom";
 import { add } from "@dojo/framework/stores/state/operations";
 import createMockStoreMiddleware from "@dojo/framework/testing/mocks/middleware/store";
-import * as c from "bootstrap-classes";
+import * as c from "@blocklang/bootstrap-classes";
 import store from "@blocklang/designer-core/store";
 import { State } from "@blocklang/designer-core/interfaces";
 import ide from "@blocklang/designer-core/middleware/ide";
