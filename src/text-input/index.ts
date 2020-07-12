@@ -1,5 +1,5 @@
 import { create, v, w } from "@dojo/framework/core/vdom";
-import { TextInputProperties } from "widgets-bootstrap/text-input";
+import { TextInputProperties } from "@blocklang/widgets-bootstrap/text-input";
 import ide from "@blocklang/designer-core/middleware/ide";
 import Overlay from "@blocklang/designer-core/widgets/overlay";
 import * as css from "./index.m.css";
@@ -11,6 +11,7 @@ export default factory(function TextInput({ properties, middleware: { ide } }) {
 	ide.config("root");
 
 	const { value = "", onValue } = properties();
+
 	return [
 		v("input", {
 			key: "root",

@@ -1,7 +1,5 @@
 import { create, tsx, invalidator } from "@dojo/framework/core/vdom";
 import dimensions from "@dojo/framework/core/middleware/dimensions";
-import theme from "@dojo/framework/core/middleware/theme";
-import dojo from "@dojo/themes/dojo";
 import { add } from "@dojo/framework/stores/state/operations";
 import TextInput from "./text-input";
 import PlainText from "./plain-text";
@@ -23,7 +21,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
 
 library.add(faTimes, faAngleDown, faAngleRight, faEdit);
 
-const factory = create({ theme, store, dimensions, invalidator });
+const factory = create({ store, dimensions, invalidator });
 
 const plainTextWidget1: AttachedWidget = {
 	id: "plain-text-1",
@@ -107,11 +105,7 @@ const textInputWidget: AttachedWidget = {
 
 let dataId = "1";
 
-export default factory(function App({ middleware: { theme, store, dimensions, invalidator } }) {
-	if (!theme.get()) {
-		theme.set(dojo);
-	}
-
+export default factory(function App({ middleware: { store, dimensions, invalidator } }) {
 	store.executor(((storeObject: Store<State>) => {
 		storeObject.apply([
 			add(storeObject.path("pageModel", "data"), [

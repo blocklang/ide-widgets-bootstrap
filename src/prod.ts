@@ -1,11 +1,11 @@
 import * as blocklang from "@blocklang/designer-core/blocklang";
-import TextInputPreview from "widgets-bootstrap/text-input";
+import TextInputPreview from "@blocklang/widgets-bootstrap/text-input";
 import TextInputIde from "./text-input";
 import TextInputPropertiesLayout from "./text-input/propertiesLayout";
 import PageDataPropertiesLayout from "./page-data/edit/propertiesLayout";
 import { widgetInstanceMap } from "@dojo/framework/core/vdom";
 import { ExtensionWidgetMap, GitUrlSegment } from "@blocklang/designer-core/interfaces";
-import PlainTextPreview from "widgets-bootstrap/plain-text";
+import PlainTextPreview from "@blocklang/widgets-bootstrap/plain-text";
 import PlainTextIde from "./plain-text";
 import PageDataPreview from "./page-data/preview";
 import PageDataIde from "./page-data/edit";
